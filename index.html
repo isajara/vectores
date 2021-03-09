@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ingreso y salida de variables</title>
+</head>
+
+<style>
+
+.titulo
+{
+	font-size: 25px;
+    font-family: Engravers MT;
+    color: white;
+}
+
+.texto
+{   
+	position: absolute;
+	top: 150px;
+	font-size: 20px;
+    font-family: Engravers MT;
+    color: white;
+}
+
+.salida
+{
+  position: absolute;
+  top: 500px;
+  left: 650px;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+    background-color: brown;
+  }
+
+  .entrada
+  {
+  position: absolute;
+  top: 500px;
+  left: 500px;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+    background-color: brown;
+  }
+
+  .cuadrito
+{
+position: absolute;
+border:solid white 1px;
+top: 330px;
+left: 320px;
+width: 750px;
+height: 100px;
+background-color: black;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 50px;
+font-family: Freestyle Script;
+color: white;
+}
+
+  .primerperiodo{
+  position: absolute;
+  top: 550px;
+  left: 50px;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+    background-color: brown;
+  }
+
+
+</style>
+
+<script>
+var vector= new Array(0);
+
+function entrada() 
+{
+  var nombre = prompt("Ingresa tu nombre para inscribirte","");
+  vector.push (nombre);
+  console.log(vector);
+  cuadrito.innerHTML="¡Welcome "+nombre+" a nuestro programa! :D";
+}
+
+ function salida() 
+ {
+ 	
+    if(vector.length>=1)
+    	{
+           var nombre = prompt("¿Te arrepentiste? :( escribe tu nombre para salir del progama","");
+ 	       var i = vector.indexOf( nombre );
+           vector.splice( i, 1 );
+           console.log(vector);
+	       cuadrito.innerHTML="Hasta pronto "+nombre+", esperamos verte pronto";
+    	}
+    else
+    	{
+    	cuadrito.innerHTML="No hay nadie registrado";	
+    	}
+  }
+
+</script>
+
+<body background="fondo.jfif" style="background-repeat: no-repeat;background-size: cover;">
+<div class="titulo"><center><h1>!Aprende a Rockear con nosotros!</h1></center></div><br>
+<div class="texto"><center><h2>Inscribete en nuestro programa para pasar todo el verano en un increible campamento musical donde aprenderás cualquier instrumento de tu elección </h2></center></div>
+<center><div class="cuadrito" id="cuadrito"></div></center>
+<a class="primerperiodo" href=" https://isajara.github.io/periodo1/">Primer periodo</a>
+
+<center><a onclick="entrada()">entrada</a></center>
+<center><a onclick="salida()">salida</a></center>
+
+<a class="entrada" onclick="entrada()">Inscribirme</a>
+<a class="salida" onclick="salida()">salir del programa</a>
+			
+</body>
+</html>
